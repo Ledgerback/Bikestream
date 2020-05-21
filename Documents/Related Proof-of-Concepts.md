@@ -1,0 +1,4 @@
+- [Databike Case Study](https://www.napier.ac.uk/research-and-innovation/impact-case-studies/databike)
+	- https://www.napier.ac.uk/about-us/news/vibration-conference-2019
+- [Iowa Data Bike](https://dmampo.org/data-bike)
+  - https://i1.wp.com/dmampo.org/wp-content/uploads/2017/05/website-art-data-bike.jpg?ssl=1
