@@ -23,7 +23,11 @@ Our first Proof-of-Concept (PoC) for the Bikestream project is the creation of a
   - Monitor
 - Smartphone 
   - Nexus 5x
-
+- Miscellaneous
+  - Zip Ties
+  - Tire pump
+  - Set of Allen Keys
+  - Pliers
 ## Software Materials
 
 - Streamr Commandline Interface (CLI)
@@ -36,6 +40,9 @@ Our first Proof-of-Concept (PoC) for the Bikestream project is the creation of a
   - Serial
 - Bluetooth2GPS 
   - Android application to stream GPS data from smartphone to RPi 3+
+
+## Building the e-bike
+......
 
 ## Real-time, User-controlled Data Streaming
 
@@ -89,6 +96,12 @@ The Microcontroller connected to all the other e-bike parts via a direct plug.
 
 The RPi 3+ received direct power from the battery's USB port. 
 
+Our configuration for the CA3 is as follows:
+
+Our configuration for the Microcontroller is as follows:
+
+The only configuration change we made to the RPi 3+ is adding the commandline program for the Python program to pipe output to the Streamr CLI program.
+
 ## Types of Data
 There are two types of data recorded with the PoC:
 
@@ -125,7 +138,11 @@ To convert the CA3 data and Nexus 5x data into JSON, a Python program was develo
 
 
 
-## Trials
+# Trials
+
+We conducted two preliminary trials to determine if our configuration was appropriate enough to operate the DBZ-001.
+
+We have conducted two trials so far to determine the bounds of the operation of the DBZ-001.
 
 # Status
 
