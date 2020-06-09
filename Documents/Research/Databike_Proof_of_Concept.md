@@ -7,6 +7,7 @@ Our first Proof-of-Concept (PoC) for the Bikestream project is the creation of a
 |Term| Definition|
 |----|-----------|
 |Onframe Hardware| Hardware we needed to attach to the bicycle frame|
+
 ## Physical and Hardware Materials
 
 - Bicycle
@@ -105,6 +106,16 @@ The CA3 collects the following information:
 The GPS data streamed from the Nexus 5x via the Bluetooth2GPS app are NMEA strings. 
 
 The following NMEA strings are streamed from the Bluetooth2GPS app:
+
+### Need for Data Manipulation
+
+The CA3's serial stream provides data in a tab-delimited format while the Nexus 5x's serial stream provides data in a comma-separated value format. 
+
+To publish with the Streamr CLI, the data must be in a JavaScript Object Notation (JSON) format. 
+
+To convert the CA3 data and Nexus 5x data into JSON, a Python program was developed to access the serial streams from the CA3 and the Nexus 5x, convert the streams into one single JSON file, and push the JSON-formatted file to the console where it would be piped to the Streamr CLI for publishing data. 
+
+
 
 
 
