@@ -114,11 +114,47 @@ The CA3 collects and streams sensor information from the e-bike.
 
 The CA3 collects the following information:
 
+- Volts, 
+- Speed,
+- Amps, 
+- Amp-hours, 
+- %regen, 
+- Watt-hours/km 
+- Distance
+- Human watts
+- PAS Rotations per minute (RPM)
+- PAS Torque Newton meters
+- Throttle In voltage
+- Throttle Out voltage
+- Temperature degrees in Celsius
+- Auxiliary Analog
+- Auxiliary Digital
+- Flags
+  - 1/2/3= Preset #
+  - X= Throttle Fault
+  - B= Brake
+  - A= Amp Limiting
+  - W= Watt Limiting
+  - T= Temp Limiting
+  - V= Low Volts Limiting
+  - S= Speed Limiting
+  - s= Low Speed Limiting
+
 ### Nexus 5x Data
 
-The GPS data streamed from the Nexus 5x via the Bluetooth2GPS app are NMEA strings. 
+The GPS data streamed from the Nexus 5x via the Bluetooth2GPS Android application are [National Marine Electronics Association (NMEA) sentences](https://www.gpsinformation.org/dale/nmea.htm#nmea). For more information, refer to the NMEA standard. 
 
-The following NMEA strings are streamed from the Bluetooth2GPS app:
+The first word describes the data type (starting with a *$*), and the rest of the sentence is information that is interpreted based on the data type. 
+
+The following NMEA data types are streamed from the Nexus 5x via the Bluetooth2GPS app:
+
+- GPGGA
+- GPRMC
+- GPGSA
+- GPGSV
+- GPRMB
+- HCHDG
+
 
 ### Need for Data Manipulation
 
@@ -128,9 +164,17 @@ To publish with the Streamr CLI, the data must be in a JavaScript Object Notatio
 
 To convert the CA3 data and Nexus 5x data into JSON, a Python program was developed to access the serial streams from the CA3 and the Nexus 5x, convert the streams into one single JSON file, and push the JSON-formatted file to the console where it would be piped to the Streamr CLI for publishing data. 
 
+### Current Data Specification
+
+Our current data specification combines the CA3 data with the GPS data into one unified JSON format. 
+
+The specification is as follows:
 
 
 
+## Prototype Fleet
+
+Our prototype for this PoC is the [DBZ-001](Documents/Prototype_Fleet/Databike_Zeta_001_2020_0605.jpg)
 
 ## Current Version
 
@@ -146,7 +190,7 @@ We have conducted two trials so far to determine the bounds of the operation of 
 
 # Status
 
-We have proved our PoC by building Databike Zeta 001 (DBZ-001), a bicycle that was converted into an electric bicycle (e-bike) with e-bike parts and strapped with two on-board computers, a CA3 (bike computer) and a RPi 3+ (single board computer), and the use of a free-hand Nexus 5x smartphone.  The RPi 3+ stores and manipulates information from two sources:
+We have proved our PoC by building Databike Zeta 001 (DBZ-001), a bicycle that was converted into an electric bicycle (e-bike) with e-bike parts and strapped with two on-board computers, a CA3 (bike computer) and a RPi 3+ (single board computer), and the use of a free-hand Nexus 5x smartphone. The RPi 3+ stores and manipulates information from two sources:
 
 1. The CA3 that records the internal information of the DBZ-001's sensors; and 
 2. The Nexus 5x that records the GPS data from the Nexus 5x's GPS sensor.
@@ -155,4 +199,47 @@ The stored data is manipulated into a JSON format and then piped to the Streamr 
 
 The commandline program for the Python program and Streamr CLI program is initiated during boot-up on the RPi 3+.
 
-Once the commandline program is running, the data will be streamed to the stream on Streamr.
+Once the commandline program is running, the data will be transmitted to the stream on Streamr.
+
+# Improvement Options
+
+A laundry list of tasks to improve the PoC. 
+
+- Create an analytics dashboard on Streamr
+- Use the Python library for Streamr
+- Optimize the Python programs
+- Find more mitigation strategies for performance issues
+- Adding another RPi 3+ for data storage and manipulation
+
+# Additional options we can test with our current setup
+
+- Connecting the CA3 to the Nexus 5x and storing, processing and transmitting data to the stream on Streamr
+- Recording and sharing acceloremeter sensor data from the Nexus 5x with the RPi 3+ to obtain vibration data from the road surface 
+- Creating multiple streams for the DBZ-001 for each type of serial data or sensor.
+- Connecting the CA3 to the Nexus 5x to record GPS output as NMEA strings and storing the information on the RPi 3+.
+  - i.e., trying out the more experimental firmwares of the CA3.
+ - Recording acceloremeter sensor data from the Nexus 5x
+ - Assessing more data and standards related to e-bikes and electric vehicles in general
+ - Controlling the CA3 or microcontroller with the RPi 3+
+
+# Potential Expansion of PoC
+
+The PoC was proven for e-bike data and geolocation data, but we can also expand our data collection efforts by adding the following sensors:
+
+- Cadence Sensor: To collect pedaling rate data (i.e., the human power being applied)
+- Heart Rate Monitor: To collect heart rate data (e.g., beats per minute)
+- Temperature Sensor: To collect temperature-related data from the e-bike parts
+- Torque Sensor: To collect pedaling rate data (i.e., the human power being applied)
+- Acceloremeter Sensor: To collect vibration data from the road surface (the sensor would be attached to the RPi 3+)
+
+If we add a torque sensor, we can also test out having a pedal assist e-bike ("pedelec") and a manual throttle e-bike.
+
+We can expand our specification of data by adding the Open Mobility Foundation's (OMF) data specification or the General BikeSharing Feed (GBFS) data specification to our stream. 
+
+Additionally, we can test out a QR code scanner function with the RPi 3+ via a touch screen. This application would be for testing out a dockless bikesharing solution. 
+
+## New PoCs to consider
+Two new PoCs we have considered after proving our databike PoC are:
+
+- Solar-powered databikes; and
+- Autonomous databikes.
