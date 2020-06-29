@@ -6,7 +6,8 @@ Our first Proof-of-Concept (PoC) for the Bikestream project is the creation of a
 
 |Term| Definition|
 |----|-----------|
-|Onframe Hardware| Hardware we needed to attach to the bicycle frame|
+|Onframe Hardware| Computer hardware we needed to attach to the bicycle frame|
+| RPi 3+| Raspberry Pi 3+ |
 
 ## Physical and Hardware Materials
 
@@ -15,8 +16,10 @@ Our first Proof-of-Concept (PoC) for the Bikestream project is the creation of a
     - 26" rim
 - e-bike Parts
   - Cycle Analyst 3
+    - USB-to-TTL adapter
   - Right twist throttle
   - e-brakes (pair)
+  - Predator 48V battery
 - Single Board Computer
   - Raspberry Pi 3+ (RPi 3+)
   - Keyboard
@@ -35,14 +38,248 @@ Our first Proof-of-Concept (PoC) for the Bikestream project is the creation of a
 - Commandline command to start the Python program and Streamr CLI at start-up
 - Python Libraries:
   - Pandas
-  - Pynmea2
+  - [Pynmea2](https://github.com/Knio/pynmea2)
   - JSON
   - Serial
+  - PyPi
 - Bluetooth2GPS 
   - Android application to stream GPS data from smartphone to RPi 3+
 
-## Building the e-bike
-......
+## e-bike conversion
+
+The driving factor behind our choice of materials was the cost of building the prototype e-bike. We decided not to purchase a pre-assembled e-bike (with parts we considered desirable) because the cost was too high, the warranty would be voided as soon we started tinkering with the internal parts, and we needed to make sure that we had a baseline understanding of converting traditional bicycles to e-bikes for ourselves.
+
+We purchased our e-bike conversion parts from EM3ev and from LunaCycles based on comment threads found on eBike- and cycling-related subreddits on Reddit and threads on endlesssphere, a bicycle forum. Our review of the comment threads led us to believe that we could purchase quality parts for an e-bike conversion from both sellers. 
+
+
+###### This Section is currently being edited
+
+```
+We purchased the following parts based on EM3ev's e-bike conversion kit:
+
+Product
+
+Quantity
+
+Price
+
+Upgrade Mac Ebike Kit with 48/52V Battery Option (~1500W Max) (#BUNDLE_MAC-48V30A)
+
+1
+
+$853.00
+
+Throttle Type - Right Half Twist (#WUX-HI_R_HT)
+
+1
+
+Subtotal: $10.00
+
+Ebrake Type - Mechanical Ebrakes Lever (pair) (#WUX_EBK_PR)
+
+1
+
+Subtotal: $6.00
+
+Mac Motor & Axle Type - Standard Rear, Freewheel, 135mm (#MAC_R135_FW)
+
+1
+
+Subtotal: $270.00
+
+Mac Motor Wind - 8T 50KPH (30 MPH) at 48V/26" Rim (#MAC-8T-WINDING)
+
+1
+
+Subtotal: $0.00
+
+Rim Type For Wheel Build (#AL_26_DH21D)
+
+·         Rim Type:
+
+26" Alex DH21 Disc
+
+1
+
+Subtotal: $27.00
+
+Spoke Type For Wheel Build (#SAPIM_BL_SET)
+
+·         Spoke Type:
+
+13G Sapim Black (Please ensure you select a rim)
+
+1
+
+Subtotal: $25.00
+
+Cycle Analyst Ebike Computer, CA-DPS Vers 2.4 (#CA2-DPS)
+
+1
+
+Subtotal: $100.00
+
+Cycle Analyst Programme Cable (#CA-USB)
+
+1
+
+Subtotal: $18.00
+
+Freewheel Type - 7sp Shimano (#SHIMANO_7SP)
+
+1
+
+Subtotal: $12.00
+
+DNP Extractor Tool (#DNP-TOOL)
+
+1
+
+Subtotal: $6.00
+
+48V (13S4P) Preditor L Options - 48V 11.8Ah Preditor (13S4P-30Q) High-Power (#13S4P-PRED_L-30Q)
+
+1
+
+Subtotal: $349.00
+
+54.6V Charger (for 13S, 48V NCM/NCA Battery) - 54.6V 2A Plastic Case Charger (#54.6V2A_CHRG)
+
+1
+
+Subtotal: $30.00
+
+AC Plug for Charger - USA (#USA_PLUG)
+
+1
+
+Subtotal: $0.00
+
+Subtotal:
+
+$853.00
+
+Shipping:
+
+$146.30 via USA Battery
+
+Payment method:
+
+PayPal
+
+Total:
+
+$999.30
+
+9 FET IRFB3077 (30A) Infineon Sensored Controller: Fully Programmable For Motors With Hall Sensors (#BUNDLE-INFINEON-9FET-3077)
+
+1
+
+$97.50
+
+Controller Battery Connections - Anderson 45PP (incl. battery side) (#BATT-ANDERSON_PP+)
+
+1
+
+Subtotal: $3.50
+
+Phase Wire Connections - Anderson 45PP (incl. motor connections) (#PHASE-ANDERSON_PP+)
+
+1
+
+Subtotal: $5.00
+
+Bar-Mounted Power Switch: For Infineon Controllers (#INFINEON-POWER-SWITCH)
+
+1
+
+Subtotal: $3.00
+
+EB3 Infineon Program Lead: For Programming EB3 Infineon Controllers (Software included) - Do Not Connect To the CA3 PAS/Torque Connector (#EB3PRGM)
+
+1
+
+Subtotal: $10.00
+
+DNP Extractor Tool (#DNP-TOOL)
+
+1
+
+$0.00
+
+Product	Quantity	Price
+CA3-DPS, Cycle Analyst Ebike Computer	1	$130.00
+Ebrake Levers (mechanical cable-pull)	1	$12.00
+Ebrake Type - Mechanical Ebrakes Lever (pair)	1	Subtotal: $10.00
+Ebrake Connector Type - To CA3 (0.3m or as specified)	1	Subtotal: $2.00
+Right Half Twist Throttle: The Premium Right Half Twist Throttle	1	$12.00
+Throttle Type - Right Half Twist	1	Subtotal: $10.00
+Throttle Connector Type - To CA3 (0.3m)	1	Subtotal: $2.00
+Custom Non-Battery Item - Info to be added here
+CA3 above to be compatible with the temperature sensor fitted to the Mac motor from Order 10053:
+Standard Rear Mac Motor was purchased in March, 2019
+
+1	$0.00
+Subtotal:	$154.00
+Shipping:	$19.17 via DHL/UPS USA (~3 days shipping time)
+Payment method:	PayPal
+Total:	$173.17
+
+Luna Cycles Triangle Battery Bag Velcro
+BAG-TRI-VELCRO	1	$24.95 USD	$24.95 USD
+Subtotal:	$24.95 USD
+Shipping:	$5.00 USD
+Grand Total:	$29.95 USD
+
+
+Our total cost was:
+
+A good amount of our costs arose from having parts that did not have the proper connection and realizing we needed more data than would be avilabale with our setup based on the CA2.
+
+Now, if we had gone about this in a better, more informed manner, as we know now at the end of the PoC, we believe our total costs would be (especially if we used LunaCycle to avoid high shipping costs):
+
+
+However, we did not need to use the L-space battery bag holder from LunaCycle because we could attach the battery to the frame of the CycleForce BTM. 
+
+```
+
+
+Once we had purchased all of the parts in the first round, we started converting the bicycle into an e-bike. We began the conversion of the bicycle in early 2020 and did not finish until April 2020. Our purchase of the CycleForce MTB came as parts, which reuqired us to assemble the parts together to form a complete bike. While assembling the parts for the Cycleforce MTB, we also started attaching the e-bike parts to the frame. After attaching the e-bike parts to the CycleForce MTB, we attached the RPi 3+ to the frame of the e-bike (and thus, turning our e-bike into a databike). 
+
+After April 2020, we mostly conducted maintenance on the e-bike, configured the Infinieon controller and CA3, and tested the e-bike to ensure it worked as expected.  The e-bike conversion took approximately 2 - 3 weeks of work to complete because of conflicting schedules, the need for maintenance on the e-bike, and the realization that we needed extra parts (mostly arising from switching from the CA2 to CA3) during the conversion. 
+
+### e-bike Range
+
+The range of the e-bike is signaifcnatly affected by your cycling habits and your road conditions (e.g., elevation). Most important thing to consider is your travelling speed and how that affects your battery usage. 
+
+### e-bike simulations
+
+We conducted ~2 -3 simulations of our converted e-bike on the [Grin Tech Ebike Simulator](http://www.ebikes.ca/tools/simulator.html).
+
+We recommend simulating the performance of your expected converted e-bike before purchasing your parts individually or as part of an e-bike conversion kit. 
+
+## Operation of DBZ-001
+
+The DBZ-001 is very easy to operate from the perspective of a cyclist.
+
+### Manual
+
+1. Connect the MicroUSB-to-USB cord from the RPi 3+'s power port to the external USB port on the battery.
+2. Connect the USB-to-TTL adapter from the CA3 to one of the RPi 3+'s USB ports. 
+3. Turn on the battery by holding on to the power button for ~3 - 5 seconds (there should be flash of green light from the LED indicator)
+4. Switch on the operating switch for the e-bike parts by pushing the switch forward and up.
+5. Start the Bluetooth2GPS mobile application on the smartphone and ensure the smartphone's bluetooth connection is on. 
+6. Ensure the RPi 3+ is powered on by determining whether the power light is flashing green.
+7. Wait ~2 - 5 minutes for the RPi 3+ to finishing booting up and if the RPi 3+ shows up on the Bluetooth2GPS home screen on the smartphone, then the RPi 3+ is working properly. 
+8. Now you can operate the databike as you would normally for an e-bike or traditional bicycle.
+
+### Checklist
+
+1. If the RPi 3+ is not powering on, try removing and reattaching the MicroUSB-to-USB cord from the RPi 3+'s power port to the external USB port on the battery until the power light is flashing green. 
+2. If the RPi 3+ is not showing up on the Bluetooth2GPS home screen on the smartphone, try restarting the RPi 3+ by following 1. 
+3. Reset trip data on the CA3 before you begin a new trip.
+4. Check the battery life before embarking on your trip. 
+5. Conduct a short trip (less then 30 feet) to check on the operation of the twist throttle and the e-brakes. If the throttle is unresponsive, you may need to adjust your Throttle In (ThI) or Throttle Out (ThO) settings. If the e-brakes are not cutting off the motor, you may need to adjust your e-brake settings. Any issues regarding the throttle or e-brakes should be visible on the home screeen of the CA3. If the throttle and e-brakes are shown to be working properly on the CA3 home screen but the motor is not turning, you may need to adjust the settings on the Infinieon controller or the CA3's settings.
 
 ## Real-time, User-controlled Data Streaming
 
@@ -72,9 +309,14 @@ Streamr is a service built on top of the Ethereum blockchain for real-time strea
 
 We created a data stream and marketplace product on Streamr.
 
-Our data stream is the Databike stream and can be found here:
+Our data stream is the Databike Pilot Community Stream, and can be found here:
 
-Our marketplace product is the Mobility Cyclist Association and can be found here:
+- [Databike Pilot Community Stream](https://streamr.network/marketplace/products/ebc580eb3eee4052b332fe558fa85cc8c6c75d319959489f8fed905d19128bdf/streamPreview/LzP4JBc9RoWdCsmDediy2A)
+  - Stream ID: LzP4JBc9RoWdCsmDediy2A
+
+Our marketplace product is the Mobility Cyclist Association, and can be found here:
+
+- [Mobility Data Cyclist Association](https://streamr.network/marketplace/products/ebc580eb3eee4052b332fe558fa85cc8c6c75d319959489f8fed905d19128bdf)
 
 We decided to use Streamr's CLI to connect to our stream because we needed to stream data from the RPi 3+ to the stream in headless mode (i.e., without a monitor nor a keyboard), and we needed the stream to start as soon as the RPi 3+ finished booting up.
 
@@ -86,13 +328,13 @@ The Onframe Hardware we needed to set up included the:
 
 - RPi 3+
 - CA3
-- Microcontroller
+- Infinieon controller
 
 The CA3 connected to the RPi 3+ via a USB-to-TTL adapter.
 
-The Microctronller connected to the CA3 via a direct plug from the Microcontroller to the CA3
+The Infineon controller connected to the CA3 via a direct plug from the Microcontroller to the CA3.
 
-The Microcontroller connected to all the other e-bike parts via a direct plug.
+The Infineon controller connected to all the other e-bike parts via a direct plug.
 
 The RPi 3+ received direct power from the battery's USB port. 
 
@@ -176,17 +418,13 @@ The specification is as follows:
 
 Our prototype for this PoC is the [DBZ-001](Documents/Prototype_Fleet/Databike_Zeta_001_2020_0605.jpg)
 
-## Current Version
-
-## Operation 
 
 
 
 # Trials
 
-We conducted two preliminary trials to determine if our configuration was appropriate enough to operate the DBZ-001.
+We conducted two preliminary trials to determine if our configuration was appropriate enough to operate the DBZ-001, and to test the bounds of operating the DBZ-001.
 
-We have conducted two trials so far to determine the bounds of the operation of the DBZ-001.
 
 # Status
 
