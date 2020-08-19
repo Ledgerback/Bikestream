@@ -20,7 +20,7 @@ For more information, please read the [slidedeck](https://docs.google.com/presen
 - Charles Adjovu
 - Gavin Hansen
 
-If you would like to join the team, please send an email to ledgerback@gmail.com.  
+If you would like to join the team, please fill out the [***form***](https://forms.gle/mGYNiSnUbQTJrRgW9).
 
 # Slidedeck
 
