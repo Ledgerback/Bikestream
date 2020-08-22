@@ -25,3 +25,7 @@ If you would like to join the team, please fill out the [***form***](https://for
 # Slidedeck
 
 - [Slidedeck](https://docs.google.com/presentation/d/18EfMK_-orke-S8Jski1dUgbcYAMd2TpoWm_ZSkn-deE/edit?usp=sharing)
+
+# Talk
+
+Come talk with us on [Discord](https://discord.gg/YuMSjWP).
