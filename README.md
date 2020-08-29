@@ -13,7 +13,7 @@ Through the project, we hope to connect with other researchers and organizations
 
 We have successfully developed the DBZ-001 and are excited about the prospects of the future of this project. 
 
-For more information, please read the [slidedeck](https://docs.google.com/presentation/d/18EfMK_-orke-S8Jski1dUgbcYAMd2TpoWm_ZSkn-deE/edit?usp=sharing). 
+For more information, please read the [slidedeck](https://docs.google.com/presentation/d/1rRAxiwdAZD8dzrfPTdBN7PWBHJ3g2lZ1ic6fQXoWC-A/edit?usp=sharing).
 
 # Team
 
@@ -22,9 +22,9 @@ For more information, please read the [slidedeck](https://docs.google.com/presen
 
 If you would like to join the team, please fill out the [***form***](https://forms.gle/mGYNiSnUbQTJrRgW9).
 
-# Slidedeck
+# Introductory Slidedeck
 
-- [Slidedeck](https://docs.google.com/presentation/d/18EfMK_-orke-S8Jski1dUgbcYAMd2TpoWm_ZSkn-deE/edit?usp=sharing)
+- [Slidedeck](https://docs.google.com/presentation/d/1rRAxiwdAZD8dzrfPTdBN7PWBHJ3g2lZ1ic6fQXoWC-A/edit?usp=sharing)
 
 # Talk
 
