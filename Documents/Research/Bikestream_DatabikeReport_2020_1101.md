@@ -1,14 +1,16 @@
 # Databike report
 
 ## Outline
-1. Parts bought and cost (also mention where people can do simulations)
-2. Converting bike to ebike to databike (just mention parts changed and their placement (if needed), and then how SBC is connected to CA3 to act as a datalogger and where it is placed on the bike) (also expected time of conversion with 2 people with basic parts)
-3. Databike configuration (describe RPi 3 and configuration, CA3 configuration and controller configuration)
-4. Data collection (how data is shared between phone and RPi and between RPi and CA3), specification (how CA3 data and GPS data is structured together into JSON), and sharing (Python program and Streamr)
-5. Operation of bike (turning on parts and getting them to work together)
-6. Mention trials of just actual uses
-7. Additional sensors that can be added
-8. Issues
+1. Materials
+2. Building the databike
+3. Databike configuration 
+4. Data collection, specifications, and sharing
+5. Operating the databike
+6. Additional sensors that can be added
+7. Issues
+8. Possible Improvements
+9. Future Proof-of-Concepts
+10. Sample Datasets
 
 ## Definitions
 
@@ -66,7 +68,7 @@
   - Android application to stream GPS data from Smartphone to RPi-3B+
 
 
-## Parts Bought and Costs
+### Expenses
 
 Refer to [Bikestream Expenses Sheet](https://docs.google.com/spreadsheets/d/17jbUsjJREUYRPEIt2wY_w-89ypXyV2_iFkHinWlip3c/edit?usp=sharing)
 
@@ -140,7 +142,7 @@ We needed to conigure the RPi-3B+ to handle the following tasks:
 
 To do so, we modified the RPi-3B+ configuation so that at start-up, it would run our Program and stream our data to our Streamr stream.
 
-## Data collection (how data is shared between phone and RPi and between RPi and CA3), specification (how CA3 data and GPS data is structured together into JSON), and sharing (Python program and Streamr)
+## Data collection, specifications, and sharing
 
 ### RPi-3B+
 
@@ -300,7 +302,7 @@ Our data specification for the Databike Pilot Community Stream is a JSON that co
 
 The data itself is specified in the following formats (with the field as the key, and the value as the field type):
 
-- GLGSV:  List
+- GLGSV: List
 - HCHDG: List
 - HCHDT: List
 - GPMDA: List
@@ -387,12 +389,6 @@ We have found that the DBZ-001 is very easy to operate from the perspective of a
 4. Check the battery life before embarking on your trip. 
 5. Conduct a short trip (less then 15 feet) to check on the operation of the twist throttle and the e-brakes. If the throttle is unresponsive, you may need to adjust your Throttle In (ThI) or Throttle Out (ThO) settings. If the e-brakes are not cutting off the motor, you may need to adjust your e-brake settings. Any issues regarding the throttle or e-brakes should be visible on the home screeen of the CA3. If the throttle and e-brakes are shown to be working properly on the CA3 home screen but the motor is not turning, you may need to adjust the settings on the Infinieon controller or the CA3's settings.
 
-
-
-~~The Program would read in the data from the Smartphone and CA3, combine the data into a JSON format, and send to stdout.
-
-
-
 ## Issues
 These are some of the issues we ran into during operation of the DBZ-001 and also from setting up the RPi-3B+'s connection to the CA3 and the Smartphone.
 
@@ -438,9 +434,8 @@ Two new PoCs we have considered after the databike PoC are:
 1. Solar-powered databikes; and
 2. Autonomous (i.e., self-cycling) databikes.
 
---- 
 
-# Sample Datasets
+## Sample Datasets
 
 You may find our sample datasets in our [datasets folder](https://github.com/Ledgerback/Bikestream/tree/master/Datasets).
 
