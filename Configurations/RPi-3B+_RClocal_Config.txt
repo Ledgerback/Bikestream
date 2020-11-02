@@ -1,0 +1,63 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is %s\n" "$_IP"
+fi
+
+#######################################
+# Adding streamfile_options below #####
+#######################################
+
+####### streamfiles_option1 inactive ####
+
+sudo rfcomm bind n/a "Device Address" 8 
+
+#sudo /usr/bin/python3 /home/pi/pyserial_ex_all.py & 
+
+
+############33#########################3####
+# Streamfile_options2 and 3                #
+############################################
+
+############3 streamfiles_option2 active #######
+
+#sudo rfcomm bind n/a "Device Address" 8
+
+#sudo /usr/bin/python3 /home/pi/pyserial_ex_ca3.py & | streamr publish LzP4JBc9RoWdCsmDediy2A VzDWK3uYR2OdFgukFqSuvwXAmSNTpXRnWtPWiFlqWn-Q & 
+
+#sudo /usr/bin/python3 /home/pi/pyserial_ex_nmea.py | streamr /home/pi/@streamr/cli-tools/src/publish.js LzP4JBc9RoWdCsmDediy2A p1Y3u10bTJOyinQpvOxsZgJgLqHdxnR2CN0DM1ta5meg
+
+#sudo bash -c '/usr/bin/python3 /home/pi/pyserial_ex_nmea.py > /home/pi/Desktop/livetest1.txt 2>&1' &
+
+# trying a bash file
+sudo bash -c '/usr/bin/python3 /home/pi/pyserial_ex_all_2.py | streamr /home/pi/@streamr/cli-tools/src/publish.js LzP4JBc9RoWdCsmDediy2A p1Y3u10bTJOyinQpvOxsZgJgLqHdxnR2CN0DM1ta5meg' &
+
+#sudo bash -c '/usr/bin/python3 /home/pi/pyserial_ex_all_2.py > /home/pi/Desktop/ex_all2.txt 2>&1' &
+
+
+############### Streamfiles_option3 inactive  #####
+
+#sudo rfcomm bind n/a 64:BC:0C:E1:12:F4 8
+
+#putty -load "NMEA_GPS_Nexus5x_settings"
+
+#putty -load "CycleAnalyst_Settings"
+
+#python3 bikefiles_to_json.py | streamr publish LzP4JBc9RoWdCsmDediy2A "API Key"
+
+
+
+exit 0
