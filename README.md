@@ -29,3 +29,7 @@ If you would like to join the team, please fill out the [***form***](https://for
 # Talk
 
 Come talk with us on [Discord](https://discord.gg/YuMSjWP).
+
+# Donation
+
+<a target="_blank" href="https://donorbox.org/ledgerback-digital-commons-research-cooperative-community-funding-initiative?default_interval=o"><img src="https://d1iczxrky3cnb2.cloudfront.net/button-medium-blue.png" /></a>
