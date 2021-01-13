@@ -26,9 +26,9 @@ If you would like to join the team, please fill out the [***form***](https://for
 
 - [Slidedeck](https://docs.google.com/presentation/d/1rRAxiwdAZD8dzrfPTdBN7PWBHJ3g2lZ1ic6fQXoWC-A/edit?usp=sharing)
 
-# Talk
+# Chat
 
-Come talk with us on [Discord](https://discord.gg/YuMSjWP).
+Come talk with us on [Discord](https://discord.gg/YuMSjWP) or [Slack](https://join.slack.com/t/ledgerback/shared_invite/zt-6kef18dv-gqFTrvM9xvINkO~v5ltgYw).
 
 # Donation
 
