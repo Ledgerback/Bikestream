@@ -65,6 +65,7 @@ Come talk with us on [Discord](https://discord.gg/YuMSjWP) or [Slack](https://jo
 1. Help us develop or ind an open source mobile application or tracking or renting databikes in real-time (like Lime).
 2. Help us connect a smart-lock to a Raspberry Pi 3 B+
 3. Help us develop an Ethereum DApp that records smart-lock events  
+4. Help us ix/troubleshoot the errors in our Python program. 
 
 ## Issues
 1. Send us your thoughts on issues plaguing mobility data, micro-mobility industry, cycling, location data, or other related areas
