@@ -30,6 +30,10 @@ If you would like to join the team, please fill out the [***form***](https://for
 
 Come talk with us on [Discord](https://discord.gg/YuMSjWP) or [Slack](https://join.slack.com/t/ledgerback/shared_invite/zt-6kef18dv-gqFTrvM9xvINkO~v5ltgYw).
 
+# Alternative to?
+
+- Goal: Populus.ai 
+
 # How to contribute
 ## DIY e-bikes
 
